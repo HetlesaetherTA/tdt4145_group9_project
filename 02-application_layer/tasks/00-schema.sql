@@ -1,6 +1,8 @@
 -- Changes from first assignment:
 -- 1. CREATE TABLE -> CREATE TABLE IF NOT EXISTS for all tables
 -- 2. Formating change: vim(:%s/\s*--.*//g) && vim(:v/./d)
+-- 3. Added PRAGMA foreign_keys = ON;
+PRAGMA foreign_keys = ON;
 CREATE TABLE IF NOT EXISTS Locations (
     id INTEGER PRIMARY KEY,
     address TEXT NOT NULL,

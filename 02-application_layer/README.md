@@ -11,9 +11,6 @@ mkdir group9 && cd group9 && curl -L https://codeload.github.com/HetlesaetherTA/
 ### Run instructions:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
 python main.py
 ```
 

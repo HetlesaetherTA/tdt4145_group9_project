@@ -67,7 +67,7 @@ class State:
 
         choise = int(choise)
 
-        if len(keys) <= choise < 0:
+        if choise < 1 or choise > len(keys):
             return True
 
         key = keys[choise - 1]

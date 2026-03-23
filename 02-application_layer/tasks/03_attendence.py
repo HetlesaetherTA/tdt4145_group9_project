@@ -52,7 +52,7 @@ def solutionSql():
     # 2. Session is in the past
     # 3. If a penaltyDot was not given to user, attendence is valid
     #
-    # I do this because having a attended? attribute breaks
+    # I do this because having an `attended?` attribute breaks
     # normal form as PenaltyDots already infer this property
     if attended.bool:
         db.runScript("./03_attendenceTrue.sql")
@@ -81,7 +81,7 @@ def read():
                              INNER JOIN Sessions s ON pd.session_id = s.id
                              INNER JOIN Users u ON pd.user_id = u.id
                              """)
-    return f"Johnny attended? {attended.bool}\n\n{res}"
+    return f"Johnny attended? {attended.bool}\n\nPenaltyDots Table:\n{res}"
 
 
 menu = {

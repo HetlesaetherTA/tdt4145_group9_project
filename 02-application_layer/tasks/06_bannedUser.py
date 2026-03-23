@@ -11,7 +11,7 @@ class Banned:
 
         if not self.bool:
             cur.execute("""
-            INSERT INTO PenaltyDots (user_id, session_id) VALUES 
+            INSERT OR IGNORE INTO PenaltyDots (user_id, session_id) VALUES 
             (14, 5),
             (14, 8),
             (14, 7);
@@ -46,7 +46,7 @@ def read():
                             INNER JOIN Users u ON su.user_id = u.id
                             WHERE u.email_address = 'johnny@stud.ntnu.no'
                                 """)
-    return f"Johnny banned? {banned.bool}\n\nPenaltyDots:\n{penaltyDots}\n\nSign Ups:\n{signUps}"
+    return f"Johnny banned? {banned.bool}\n\nPenaltyDots Table:\n{penaltyDots}\n\nSignUps Table:\n{signUps}"
 
 
 def solutionSql():
@@ -62,7 +62,6 @@ def solutionSql():
 def solutionPython():
     cur = db.conn.cursor()
 
-    error = ""
     try:
         cur.execute("""
                         INSERT INTO SignUps (user_id, session_id)

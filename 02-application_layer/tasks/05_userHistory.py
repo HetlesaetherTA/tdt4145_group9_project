@@ -7,7 +7,7 @@ def solutionSql():
     query = sqlFile.read_text()
 
     text = db.formattedQuery(query)
-    state.setFrame(text)
+    state.setFrame(f"WHERE user = Johnny Table:\n{text}")
     history.run()
 
 
